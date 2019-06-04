@@ -1,0 +1,9 @@
+<div class="user-list__wrapper">
+  <div class="user-list__list">
+    <div *ngFor="let item of userList">
+      <app-user-list-item [item]="item"></app-user-list-item>
+    </div>
+
+    <mat-paginator [length]="total" [pageSize]="3" (page)="pageChanged($event)"></mat-paginator>
+  </div>
+</div>

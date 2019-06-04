@@ -1,0 +1,4 @@
+<app-user-list [userList]="userList$ | async"
+               [total]="total$ | async"
+               (changePage)="pageChanged($event)"
+></app-user-list>
