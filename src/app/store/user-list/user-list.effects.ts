@@ -14,7 +14,7 @@ export class UserListEffects {
   public userListFetch$: Observable<UserListFetchSuccess> = this.actions$.pipe(
     ofType<UserListFetch>(UserListActionType.FETCH),
     map(action => action.page),
-    switchMap((page: number) => this.http.get(`https://reqres.in/api/users?page=${page}`).pipe(
+    switchMap((page: number) => this.http.get(`https://reqres.in/api/users?page=${page + 1}`).pipe(
       map((response: { data: UserApiModel[], total: number }): UserListState => ({
         items: response.data,
         total: response.total,
